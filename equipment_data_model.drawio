@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
+  <diagram name="SAP_PM_DWH_FULL_ER" id="Q9fqy6TGy2rmdqOxd3lk">
+    <mxGraphModel dx="711" dy="417" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DIM_EQUIPMENT" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc" value="DIM_EQUIPMENT&#xa;PK equipment_key&#xa;equipment_no&#xa;equipment_type&#xa;equipment_desc&#xa;manufacturer&#xa;model&#xa;serial_no&#xa;startup_date&#xa;plant&#xa;cost_center&#xa;floc_no&#xa;valid_from&#xa;valid_to&#xa;is_current" vertex="1">
+          <mxGeometry height="300" width="300" x="600" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="DIM_FUNCTIONAL_LOCATION" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7" value="DIM_FUNCTIONAL_LOCATION&#xa;PK floc_key&#xa;floc_no&#xa;floc_desc&#xa;parent_floc&#xa;structure_level&#xa;plant&#xa;valid_from&#xa;valid_to" vertex="1">
+          <mxGeometry height="220" width="300" x="200" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="DIM_TIME" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc" value="DIM_TIME&#xa;PK time_key&#xa;date&#xa;day&#xa;week&#xa;month&#xa;year&#xa;fiscal_year&#xa;fiscal_period" vertex="1">
+          <mxGeometry height="200" width="300" x="600" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="DIM_MAINTENANCE_TYPE" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4" value="DIM_MAINTENANCE_TYPE&#xa;PK maintenance_type_key&#xa;order_type&#xa;maintenance_category&#xa;breakdown_flag" vertex="1">
+          <mxGeometry height="180" width="300" x="1000" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="DIM_FAILURE" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc" value="DIM_FAILURE&#xa;PK failure_key&#xa;failure_code&#xa;failure_desc&#xa;cause_code&#xa;cause_desc&#xa;damage_code" vertex="1">
+          <mxGeometry height="200" width="300" x="1000" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="DIM_COST_OBJECT" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc" value="DIM_COST_OBJECT&#xa;PK cost_object_key&#xa;cost_center&#xa;gl_account&#xa;internal_order&#xa;controlling_area" vertex="1">
+          <mxGeometry height="200" width="300" x="200" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="DIM_WORKCENTER" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6e6e6" value="DIM_WORKCENTER&#xa;PK workcenter_key&#xa;workcenter&#xa;plant&#xa;capacity" vertex="1">
+          <mxGeometry height="180" width="300" x="600" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="FACT_EQUIPMENT_INVENTORY" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000" value="FACT_EQUIPMENT_INVENTORY&#xa;FK equipment_key&#xa;FK time_key&#xa;FK floc_key&#xa;plant&#xa;is_active&#xa;acquisition_value&#xa;net_book_value&#xa;technical_status" vertex="1">
+          <mxGeometry height="200" width="340" x="600" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="FACT_MAINTENANCE_ORDER" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000" value="FACT_MAINTENANCE_ORDER&#xa;PK order_key&#xa;FK equipment_key&#xa;FK floc_key&#xa;FK maintenance_type_key&#xa;FK time_key&#xa;order_status&#xa;planned_cost&#xa;actual_cost&#xa;order_duration&#xa;breakdown_flag" vertex="1">
+          <mxGeometry height="230" width="360" x="1000" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="FACT_FAILURE_EVENT" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000" value="FACT_FAILURE_EVENT&#xa;PK failure_event_key&#xa;FK equipment_key&#xa;FK failure_key&#xa;FK time_key&#xa;failure_start&#xa;failure_end&#xa;downtime_minutes&#xa;breakdown_flag" vertex="1">
+          <mxGeometry height="220" width="360" x="200" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="FACT_MAINTENANCE_COST" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000" value="FACT_MAINTENANCE_COST&#xa;PK cost_key&#xa;FK equipment_key&#xa;FK order_key&#xa;FK cost_object_key&#xa;FK time_key&#xa;cost_element&#xa;cost_amount&#xa;currency" vertex="1">
+          <mxGeometry height="220" width="360" x="1400" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="FACT_LABOR_CONFIRMATION" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000" value="FACT_LABOR_CONFIRMATION&#xa;PK confirmation_key&#xa;FK equipment_key&#xa;FK workcenter_key&#xa;FK time_key&#xa;labor_hours&#xa;personnel_no" vertex="1">
+          <mxGeometry height="200" width="360" x="1400" y="350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
