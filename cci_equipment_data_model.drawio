@@ -40,9 +40,6 @@
         <mxCell id="QwO2bk0evatIPuNlFpQk-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#000000" value="FACT_LABOR_CONFIRMATION&#xa;PK confirmation_key&#xa;FK equipment_key&#xa;FK workcenter_key&#xa;FK time_key&#xa;labor_hours&#xa;personnel_no" vertex="1">
           <mxGeometry height="200" width="360" x="1240" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="QwO2bk0evatIPuNlFpQk-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
-          <mxGeometry height="60" width="120" x="140" y="90" as="geometry" />
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
